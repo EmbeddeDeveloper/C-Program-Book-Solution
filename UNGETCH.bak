@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <conio.h>
+#define BUFSIZE 100
+void ungetch(int c);
+char buf[BUFSIZE];
+int bufp=0;
+int getch(void);
+int main(void)
+{
+   int i=0;
+   char ch;
+   puts("Input an integer followed by a char:");
+ 
+   while((ch = getche()) != EOF && isdigit(ch))
+      i = 10 * i + ch - 48; 
+
+	if (ch != EOF)
+		ungetch(ch);
+		printf("\nEOF = %d", EOF);
+  printf("\n\ni = %d, next char in buffer = %c\n", i, getch());
+	return 0;
+}
+
+
+void ungetch(int c)
+{
+if(bufp>=BUFSIZE)
+	printf("ungetch:too many characters\n");
+else
+	buf[bufp++]=c;
+}

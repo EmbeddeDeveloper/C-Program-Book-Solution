@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+#define BUFSIZE 1000
+struct key
+{
+char *word;
+int count;
+}keytab[]={"auto",0,
+			  "break",0,
+			  "case",0,
+			  "char",0,
+			  "const",0,
+			  "continue",0,
+			  "default",0,
+			  "unsigned",0,
+			  "void",0,
+			  "while",0,};
+
+int bufp=0;
+char buf[BUFSIZE];
+
+int getch()
+{
+return (bufp>0)?buf[--bufp]:getchar();
+}
+
+void ungetch(int c)
+{
+	if(bufp>=BUFSIZE)
+	{
+		printf("error");
+	}
+	else
+		{
+			buf[bufp++]=c;
+		}
+}
+
+

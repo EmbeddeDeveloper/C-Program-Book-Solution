@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+char escape(char *s,char* t);
+
+int main()
+{
+ int k;
+char s[20]="qwerty\n123\t456";
+char t[20];
+k=escape(s,t);
+
+return 0;
+}
+
+char escape(char *s,char* t)
+{
+int i,j;
+
+for(i=0;i<20;i++)
+{
+  switch(s[i])
+	{
+		case '0':
+		break;
+		case '\n':
+      		for (j=0;j<20;j++)
+					{
+					 printf("%c",s[j]);
+					 printf("\\n");
+				}
+
+
+				//printf("%c",str[i]);
+				break;
+		case '\t':
+				printf("\\t");
+				//printf("%c",str[i]);
+				break;
+		default:
+				break;
+	}
+ }
+	return *t;
+}
+

@@ -1,0 +1,40 @@
+#include<stdio.h>
+int strlength(char *s);
+void squeeze(char* s1,char* s2);
+
+void main()
+{
+int n;
+char a[4];
+char b[4];
+printf("Enter 1st:");
+scanf("%s",&a);
+printf("Enter 2st:");
+scanf("%s",&b);
+//n=strlength(a);
+squeeze(a,b);
+}
+
+
+void squeeze(char* s1,char* s2)
+{
+int i,j;
+//char temp[5];
+for(i=j=0;s1[i]!='\0';i++)
+{
+	if(s1[i]!=s2[i])
+		s1[j++]=s2[i];
+	else
+		s1[j]='\0';
+}
+printf("s1:%c",s1);
+}
+
+int strlength(char *str)
+{
+int l;
+l=0;
+while(str[l]!='\0')
+l++;
+return l;
+}

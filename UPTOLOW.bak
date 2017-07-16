@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+int lowercase(int s);
+
+void main()
+{
+char z;
+z=lowercase('A');
+printf("Lowercase:%c",z);
+}
+
+int lowercase(int s)
+{
+if(s >='A' & s<='a')
+return s+'a'-'A';
+else
+return s;
+}

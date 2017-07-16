@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void strTolong(long*,char,int);
+
+
+void main()
+{
+clrscr();
+/*
+long &a=25000;
+long &b=20000;
+double y,c,t;
+long &x=20000;
+long &z=15500;
+int i,m;
+
+c=(double)(a-b)/(x-z);
+
+
+m=(int)c;
+y=c-m;
+t=y*10000;
+i=(int)t;
+
+printf("m=%d",m);
+printf(".%7.0d",i);
+
+printf("\nC=%lf",c);  */
+int j;
+char a={31212313};
+long* z;
+
+/*for (i=0;i<10;i++)
+{
+
+printf("a=%c",a[i]);
+}*/
+//c=atol(a);
+
+//printf("\na=%c%c%c%c%c",a[0],a[1],a[2],a[3],a[4]);
+//printf("\nc=%ld",c);
+
+
+strTolong(z,a,10);
+printf("\nconversion=%ld",z);
+
+getch();
+}
+
+void strTolong(long* z,char a,int j)
+{
+z=z+j;
+z='\0' ;
+while(j--)
+{
+*--z=10*a+(a-'0');
+a=a%10;
+
+//return(b);
+
+}
+
+}
+
